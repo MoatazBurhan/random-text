@@ -6,3 +6,10 @@ spec:
   containers:
     - name: sec-ctx-3
       image: gcr.io/google-samples/node-hello:1.0
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests:
+          memory: 256Mi
+          cpu: "0.2"

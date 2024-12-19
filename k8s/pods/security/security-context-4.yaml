@@ -9,3 +9,10 @@ spec:
       securityContext:
         capabilities:
           add: ["NET_ADMIN", "SYS_TIME"]
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests:
+          memory: 256Mi
+          cpu: "0.2"
