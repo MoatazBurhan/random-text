@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: random-text-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /api
+            backend:
+              service:
+                name: random-text-svc
+                port:
+                  number: 8004
+          - pathType: Prefix
+            path: /health
+            backend:
+              service:
+                name: random-text-svc
+                port:
+                  number: 8004

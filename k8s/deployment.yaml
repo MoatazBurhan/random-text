@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: random-text
+  name: random-text
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: random-text
+  template:
+    metadata:
+      labels:
+        app: random-text
+    spec:
+      containers:
+      - name: random-text
+        image: mburhan/random-text:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8080
